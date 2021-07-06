@@ -1,0 +1,15 @@
+/nbproject/
+/cache/
+/cgi-bin/
+/docs/
+/download/
+/img/
+/log/
+/modules/
+!/modules/boxberry
+!/modules/cashondelivery
+/old/
+/themes/
+!/themes/p55_gloss_lite
+/translations/
+/upload/
