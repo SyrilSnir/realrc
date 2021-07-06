@@ -449,15 +449,17 @@ class FrontControllerCore
 
 	public function setMedia()
 	{
-                if (get_class($this) == 'OrderController') {
+             /*   if (get_class($this) == 'OrderController') {
                     $jq_name = 'jquery-3.1.0.min';
                 } else {
                     $jq_name = 'jquery.min';
                 }
               //  $jq_name = 'jquery.min';
+              *
+              */
 		global $cookie;                
 		Tools::addCSS(_THEME_CSS_DIR_.'global.css', 'all');
-		Tools::addJS(array(_PS_JS_DIR_.'jquery/'.$jq_name.'.js', _PS_JS_DIR_.'jquery/jquery.easing.1.3.js', _PS_JS_DIR_.'tools.js'));
+		Tools::addJS(array(_PS_JS_DIR_.'jquery/jquery-3.1.0.min.js',_PS_JS_DIR_.'jquery/jquery.fix.js', _PS_JS_DIR_.'jquery/jquery.easing.1.3.js', _PS_JS_DIR_.'tools.js'));
 		if (Tools::isSubmit('live_edit') && Tools::getValue('ad') && Tools::getValue('liveToken') == sha1(Tools::getValue('ad')._COOKIE_KEY_))
 		{
 			Tools::addJS(array(_PS_JS_DIR_.'jquery/jquery-ui-1.8.10.custom.min.js', _PS_JS_DIR_.'jquery/jquery.fancybox-1.3.4.js',
