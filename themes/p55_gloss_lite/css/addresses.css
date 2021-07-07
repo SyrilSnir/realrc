@@ -1,0 +1,97 @@
+/* adresses */
+div.addresses {
+	position: relative;
+	width: 536px
+}
+div.addresses h3 { margin: 0; padding-left: 0.7em; }
+/**/
+.address_delivery {
+  float: left;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 0 8px 0 !important;
+  width: 265px;
+  padding-left: 0 !important;
+}
+div.addresses #use-same-address {
+  float: right;
+  width: 265px;
+  padding-left: 0;
+  margin: 3px 0 0 0;
+}
+div.addresses #use-same-address input[type="checkbox"] {
+  margin-left: 0;
+}
+.address_delivery p {
+  float: left;
+  width: 265px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.address_delivery p + p {
+  float: right;
+}
+.address_delivery p.select label {
+  margin-left: 0.5em;
+}
+.address_delivery p.select select {
+  width: 123px;
+  margin-top: 5px;
+}
+#address_invoice_form {
+  float: right;
+  width: 265px;
+  margin: 5px 0 7px 0 !important;
+  padding: 0 !important;
+}
+#address_invoice_form a {
+  margin: 0 !important;
+}
+/**/
+div.addresses ul.item { clear: both }
+ul.address {
+	background-color: white;
+	float: left;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	padding-bottom: 0.6em;
+	margin-bottom: 1em;
+	position: relative;
+	width: 265px
+}
+ul.address + ul.address {
+  float: right;
+}
+ul.address li {
+	padding-left: 1.4em;
+	margin-top: 0.25em
+}
+ul.address li.address_title {
+	margin-top: 0;
+  padding: 0;
+	background-color: #F3F3F3;
+  border-bottom: 1px solid #E4E4E4;
+	font-weight: bold;
+  padding: 5px;
+}
+li.address_name,
+ li.address_update a,
+ li.address_delete a { color: #333333; }
+li.address_name,
+ li.address_company { font-weight: bold }
+li.address_update,
+ li.address_delete {
+	margin-left: 1.4em;
+  background: transparent url('../img/bullet.gif') no-repeat 0 0.5em !important;
+	background: transparent url('../img/bullet.gif') no-repeat 0 0.4em;
+}
+#center_column .address_add { padding: 1em 0 }
+/**/
+#ordermsg p {
+  padding: 0 !important;
+}
+#ordermsg textarea {
+  margin: 0;
+  width: 534px;
+}

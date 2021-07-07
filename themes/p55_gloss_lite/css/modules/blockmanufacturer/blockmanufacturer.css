@@ -1,0 +1,6 @@
+/* Block manufacturer */
+.blockmanufacturer ul, .blocksupplier ul { padding: 4px 0 6px }
+.blockmanufacturer select, .blocksupplier select {
+	width: 100%;
+	margin: 0
+}

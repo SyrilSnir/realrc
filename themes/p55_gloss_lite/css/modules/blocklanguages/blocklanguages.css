@@ -1,0 +1,26 @@
+/* block top languages */
+#languages_block_top {
+	margin: 0.4em 0.3em 0 0;
+	float: right;
+	padding: 3px 4px 0 6px;
+}
+#languages_block_top a {
+	text-decoration: none;
+}
+#languages_block_top label {
+	float: left;
+	margin: 0 4px 0 0;
+}
+#languages_block_top ul#first-languages {
+	float: left;
+	height: 1.5em;
+	text-align: right;
+	margin: 2px 0 0 0;
+}
+#languages_block_top ul#first-languages li {
+	display: inline;
+	margin-right: 0.3em;
+}
+#languages_block_top ul#first-languages li.selected_language {
+	margin-right: 0.3em;
+}

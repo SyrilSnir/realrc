@@ -1,0 +1,20 @@
+/* block top links */
+ul#header_links {
+	list-style-type: none;
+	float: right;
+	padding: 3px 4px 0 6px;
+	margin: 5px 0 4px 0;
+}
+#header_links li {
+	float:left;
+	padding: 0 8px;
+	border-right: 1px solid #E4E4E4;
+}
+#header_links a {
+	text-transform: capitalize;
+	display: block;
+	height: 15px;
+	color: #595a5e;
+	text-align: center;
+	text-decoration: none;
+}

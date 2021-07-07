@@ -1,0 +1,31 @@
+/* Block editorial */
+.editorial_block { margin-bottom: 2em }
+.editorial_block .rte { background: transparent none repeat scroll 0 0 }
+.editorial_block h1 {
+  background: url("../../../img/heading_background.gif") no-repeat scroll left top transparent;
+  color: #FFFFFF;
+  font-size: 1.1em;
+  font-weight: bold;
+  height: 25px;
+  line-height: 1.75em;
+  margin: 0.5em 0;
+  padding-left: 0.5em;
+  padding-top: 5px;
+}
+.editorial_block h2 {
+  color: #333333;
+	font-size: 1em;
+  margin: 10px 3px;
+	text-transform: none;
+	padding: 0;
+	background: none;
+  height: auto;
+}
+#editorial_block_center p { padding-left: 0; }
+#editorial_block_center #editorial_image_legend {
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #E4E4E4;
+  margin: 0 0 6px;
+  padding: 5px;
+  font-weight: bold;
+}

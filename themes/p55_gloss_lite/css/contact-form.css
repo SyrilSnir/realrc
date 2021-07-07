@@ -1,0 +1,24 @@
+/* contact-form.tpl */
+  
+body#contact-form div#center_column form input#email,
+body#contact-form div#center_column form select#id_contact,
+body#contact-form div#center_column form textarea#message { width: 50% !important; }
+
+body#contact-form div#center_column form textarea#message { height: 100px !important; }
+
+body#contact-form form.std p.desc_contact label {
+  margin-right: 0.5em;
+}
+
+body#contact-form form.std p.desc_contact {
+  
+}
+
+body#contact-form form.std p.desc_contact span.like_input {
+	width: 366px;
+	text-align: left
+}
+
+body#contact-form form.std p.submit {
+  padding-left: 112px !important;
+}

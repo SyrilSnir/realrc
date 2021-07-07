@@ -1,0 +1,50 @@
+/* Block categories */
+div#categories_block_left ul.tree { padding-left: 0; }
+div#categories_block_left ul.tree li {
+	border:none;
+	background: none;
+	margin-left:0;
+	line-height:13px;
+	margin-bottom:2px;
+	padding-left: 13px;
+	overflow: hidden;
+	clear: both;
+}
+div#categories_block_left ul.tree li ul {
+	float: left;
+	clear: both;
+  padding: 3px 0 0 0;
+}
+div#categories_block_left ul.tree li ul li{
+	padding-left: 12px;
+  line-height: 12px;
+	background:none;
+	font-weight:normal;
+}
+div#categories_block_left ul.tree li ul li ul li{
+	padding-left:15px;
+	font-style: italic;
+}
+div#categories_block_left ul.tree a{
+	padding-left:0;
+	color:#333333;
+}
+div#categories_block_left ul.tree a:hover{
+	text-decoration:none;
+}
+div#categories_block_left ul.tree a.selected{
+	color: #000000;
+	font-weight: bold;
+}
+div#categories_block_left span.grower{
+	display:block;
+	float:left;
+	background-position: 0px 3px;
+	background-repeat: no-repeat;
+	width:9px;
+	height:12px;
+	margin: -1px 0 0 -13px;
+	padding: 0;
+}
+div#categories_block_left span.OPEN { background-image: url('../../../img/icon/less.gif'); }
+div#categories_block_left span.CLOSE{ background-image: url('../../../img/icon/more.gif'); }

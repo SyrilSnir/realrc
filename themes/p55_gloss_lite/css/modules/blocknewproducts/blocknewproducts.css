@@ -1,0 +1,9 @@
+/* Block new products */
+#new-products_block_right ul { padding: 5px 0 }
+#new-products_block_right ul li { 
+	margin-top: 0;
+	padding:0
+}
+#new-products_block_right ul.product_images li.first { margin-right: 11px }
+#new-products_block_right dt a { font-weight: bold }
+#new-products_block_right dd a { color: #555555; }

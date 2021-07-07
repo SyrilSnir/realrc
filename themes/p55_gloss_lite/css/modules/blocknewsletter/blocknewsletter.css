@@ -1,0 +1,7 @@
+/* Block newsletter */
+div#newsletter_block_left form { margin: 0 auto; width: 169px; }
+div#newsletter_block_left div.block_content { padding: 1em 0 0.5em 0; text-align: center; }
+div#newsletter_block_left div.block_content p { padding: 0 0 0.5em 0; text-align: center; overflow: hidden; }
+div#newsletter_block_left div.block_content input[type="text"] { height: 16px; line-height: 16px; width: 127px; padding-left: 4px; margin-left: 0; float: left; }
+div#newsletter_block_left div.block_content select { margin-left: 0; width: 169px; }
+div#newsletter_block_left div.block_content input.button_mini { text-transform: uppercase; float: right; }
