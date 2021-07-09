@@ -75,7 +75,7 @@ if (Tools::getValue('confirm'))
         
 	$total = $cart->getOrderTotal(true, Cart::BOTH);
         $cashOnDelivery->validateOrder((int)$cart->id, Configuration::get('PS_OS_PREPARATION'), $total, $cashOnDelivery->displayName, NULL, array(), NULL, false, $customer->secure_key);
-	$order = new Order((int)$cashOnDelivery->currentOrder);
+	$order = new OrderCore((int)$cashOnDelivery->currentOrder);
        // $messageContent = Tools::getValue('message');
 	Tools::redirectLink(__PS_BASE_URI__.'order-confirmation.php?key='.$customer->secure_key.'&id_cart='.(int)($cart->id).'&id_module='.(int)$cashOnDelivery->id.'&id_order='.(int)$cashOnDelivery->currentOrder);
 }
@@ -92,10 +92,22 @@ else
 	/* or ask for confirmation */ 
 	$smarty->assign(array(
 		'total' => $total,
-		'this_path_ssl' => Tools::getShopDomainSsl(true, true).__PS_BASE_URI__.'modules/cashondelivery/'
+		'this_path_ssl' => Tools::getShopDomainSsl(true, true).__PS_BASE_URI__.'modules/cashondelivery/'            
 	));
 
 	$smarty->assign('this_path', __PS_BASE_URI__.'modules/cashondelivery/');
+        if ($external_module == 'boxberry') {
+            $selectedPvz = SessionsCore::getVarSession('SELECTED_PVZ');
+            $smarty->assign([
+               'is_boxberry' => true,
+               'pvz_address' => $selectedPvz['address']
+            ]);                    
+        } else {
+            $smarty->assign([
+               'is_boxberry' => false
+            ]);             
+        }
+        
 	$template = 'validation.tpl';
 	echo Module::display('cashondelivery', $template);
 }

@@ -45,6 +45,12 @@
 		    {l s='(tax incl.)' mod='cashondelivery'}
 		{/if}
 	</p>
+        {if $is_boxberry == true}
+        <div class="carrier_info">
+          <p>Доставка компанией Boxberry</p>
+          <p>Ваш ПВЗ: <span>{$pvz_address}</span></p>
+        </div>
+        {/if}
 	<p>
             <div id="ordermsg">
                 <p>Если вы хотели бы добавить комментарий о вашем заказе, пожалуйста, напишите его ниже.</p>

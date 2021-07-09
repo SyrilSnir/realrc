@@ -19,11 +19,8 @@ class Boxberry  extends Module {
         $this->displayName = 'ПВЗ Boxberry';
         $this->description = 'Модуль добавления стоимости досавки для ПВЗ Boxberry';
     }
-    public function getOrderShippingCostExternal($cart = null) {
-        
-        if (isset($_GET['step']) && $_GET['step']  == 1) {
-            return 0;
-        }
+    public function getOrderShippingCostExternal($cart = null) 
+    {
         Sessions::sessionInit();
         $selected_pvz = Sessions::getVarSession('SELECTED_PVZ');
         if ($selected_pvz) {

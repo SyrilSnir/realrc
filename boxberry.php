@@ -55,10 +55,8 @@ elseif ((int) $_GET['set_sum'] === 1){
         $price = $cart->getOrderTotal(true,Cart::BOTH_WITHOUT_SHIPPING); 
         Sessions::setValueToVar('CARD_TOTAL_SUM',$price);
         echo 1;
-        die();
     } else {
         echo 0;
-        die();
     }
 }
 elseif (isset( $_GET['boxberry_calc'])) {

@@ -156,6 +156,18 @@ class CartCore extends ObjectModel
 	public function add($autodate = true, $nullValues = false)
 	{
 		$return = parent::add($autodate);
+                if ($this->id_carrier) {
+                    $carrier = new CarrierCore((int)$this->id_carrier);
+                    SessionsCore::sessionInit();
+                    if ($carrier->external_module_name == 'boxberry' && !empty(SessionsCore::getVarSession('SELECTED_PVZ'))) {
+                        $boxberryCalculator = new BoxberryCalculator();
+                        $totalSum = $this->getOrderTotal(true, Cart::ONLY_PRODUCTS_WITHOUT_SHIPPING);
+                        $_SESSION['SELECTED_PVZ']['price'] = $boxberryCalculator->calculateShippingPrice();
+                        $return = parent::update();                        
+                    }
+                  //  if ($carrier)
+                }                
+                $this->calculateBoxberryPrice();
 		Module::hookExec('cart');
 		return $return;
 	}
@@ -167,8 +179,9 @@ class CartCore extends ObjectModel
 		if (isset(self::$_totalWeight[$this->id]))
 			unset(self::$_totalWeight[$this->id]);
 		$this->_products = null;
-		$return = parent::update();
-		Module::hookExec('cart');
+                $this->calculateBoxberryPrice();
+                $return = parent::update();                
+                Module::hookExec('cart');
 		return $return;
 	}
 
@@ -1768,4 +1781,18 @@ class CartCore extends ObjectModel
 
 		return false;
 	}
+        
+        private function calculateBoxberryPrice() 
+        {
+                if ($this->id_carrier) {
+                    $carrier = new Carrier((int)$this->id_carrier);
+                    Sessions::sessionInit();
+                    $selectedPvz = SessionsCore::getVarSession('SELECTED_PVZ');
+                    if ($carrier->external_module_name == 'boxberry' && !empty($selectedPvz)) {
+                        $totalSum = $this->getOrderTotal(true, Cart::ONLY_PRODUCTS_WITHOUT_SHIPPING);
+                        $boxberryCalculator = new BoxberryCalculator($selectedPvz['code'],$totalSum);
+                        $_SESSION['SELECTED_PVZ']['price'] = $boxberryCalculator->calculateShippingPrice();                        
+                    }
+                }            
+        }
 }

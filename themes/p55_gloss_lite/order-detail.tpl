@@ -69,6 +69,12 @@
 
 <p class="bold">{l s='Order:'} <span class="color-myaccount">{l s='#'}{$order->id|string_format:"%06d"}</span></p>
 {if $carrier->id}<p class="bold">{l s='Carrier:'} {if $carrier->name == "0"}{$shop_name|escape:'htmlall':'UTF-8'}{else}{$carrier->name|escape:'htmlall':'UTF-8'}{/if}</p>{/if}
+        {if $is_boxberry == true}
+        <div class="carrier_info">
+          <p>Ваш ПВЗ: <span>{$pvz_address}</span></p>
+        </div>
+        {/if}
+	<p>
 <p class="bold">{l s='Payment method:'} <span class="color-myaccount">{$order->payment|escape:'htmlall':'UTF-8'}</span></p>
 {if $invoice AND $invoiceAllowed}
 <p>

@@ -23,6 +23,7 @@ var selectPoint = function( a ) {
             "geo_lat" : a["lat"],
             } 
         }, function(data){
+                alert('DATA=', data);
                 if (data != 1) {
                     location.reload();
                 }

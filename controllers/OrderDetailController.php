@@ -101,6 +101,7 @@ class OrderDetailControllerCore extends FrontController
 			if (Validate::isLoadedObject($order) AND $order->id_customer == self::$cookie->id_customer)
 			{
 				$id_order_state = (int)($order->getCurrentState());
+                                /** @var CarrierCore $carrier */
 				$carrier = new Carrier((int)($order->id_carrier), (int)($order->id_lang));
 				$addressInvoice = new Address((int)($order->id_address_invoice));
 				$addressDelivery = new Address((int)($order->id_address_delivery));
@@ -153,7 +154,14 @@ class OrderDetailControllerCore extends FrontController
 					self::$smarty->assign('followup', str_replace('@', $order->shipping_number, $carrier->url));
 				self::$smarty->assign('HOOK_ORDERDETAILDISPLAYED', Module::hookExec('orderDetailDisplayed', array('order' => $order)));
 				Module::hookExec('OrderDetail', array('carrier' => $carrier, 'order' => $order));
-				
+                                if ($carrier->external_module_name == 'boxberry') {
+                                    $bx = OrderBoxberry::getIdFromOrder($order->id);
+                                    /** @var OrderBoxberryCore $boxberry */
+                                    $boxberry = new OrderBoxberry($bx);                                    
+                                    
+                                    self::$smarty->assign('is_boxberry',true);
+                                    self::$smarty->assign('pvz_address',$boxberry->address);
+                                }
 				unset($carrier);
 				unset($addressInvoice);
 				unset($addressDelivery);

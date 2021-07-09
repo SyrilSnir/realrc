@@ -202,7 +202,6 @@ class OrderControllerCore extends ParentOrderController
                         'boxberry_widget_config' => [
                             'token' => '1$UKTMogKloK3aMIunfToTQO6mdyLDi_qP',
                             'city' => 'Москва',
-                            'target_start' => '',
                             'price' => $total,
                             'weight' => 500,
                             'paysum' => $total,
